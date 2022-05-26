@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  body {
+    font-family: 'Readex Pro', sans-serif;
+  }
+}
+
+
+.contain {
+  @apply
+    w-full mx-auto py-3 md:py-16 px-4 md:px-72
+}
+
+
+.image-checkout{
+  @apply
+  h-20 w-20 row-span-2 bg-slate-50 flex-shrink-0 flex justify-center items-center p-1 overflow-hidden rounded-md border border-gray-200
+  md:h-32 md:w-32 md:border-none
+}
+
+.tabs{
+  @apply
+   w-full text-center text-t12 py-2 uppercase cursor-pointer hover:bg-slate-100 hover:text-slate-700 
+   flex items-center justify-center
+}
+
+.tabs-active{
+  @apply
+  border-b-2 border-slate-700 bg-slate-100
+}
+
+.contents-active{
+  @apply
+   block
+}
+
+.contents{
+  @apply
+  hidden bg-white shadow overflow-hidden sm:rounded-lg text-slate-700
+}
+
+.list-wrap{
+  @apply
+  px-4 py-5 md:grid md:grid-cols-3 md:gap-4 md:px-6 
+}
+
+.sidebar-link{
+  @apply
+  flex items-center pl-6 py-4 text-md rounded-tl-lg rounded-br-lg mb-2 hover:text-slate-700 hover:bg-slate-300 cursor-pointer ease-in-out
+}
+
+a.active .sidebar-link{
+  @apply
+  bg-slate-300 text-slate-700
+}
+
+
+
+@media (max-width: 900px) {        
+    .nav-options{   
+        left: -500px;
+        transition: all 0.5s ease-in-out;
+        z-index: 1000;
+    }
+    .nav-options.active{
+        left: 0;
+    }
+}
